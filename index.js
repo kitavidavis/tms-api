@@ -14,6 +14,7 @@ const propertiesRoutes = require("./routes/properties");
 const staff = require("./routes/staff");
 const complains = require("./routes/complains");
 const units = require("./routes/units");
+const simulate = require("./routes/simulate");
 
 async function bootstrap() {
   await mongo.connect()
@@ -25,6 +26,7 @@ async function bootstrap() {
   app.use("/staff", staff);
   app.use("/complains", complains);
   app.use("/units", units)
+  app.use("/simulate",simulate);
   app.listen(PORT, () => {
     console.log(`✅ Server is listening on port: ${PORT}`)
   })

@@ -4,14 +4,18 @@ const ComplainsSchema = mongoose.Schema({
     username: {
         type: String
     },
-    title: {
+    house: {
+        type: String
+    },
+    room: {
         type: String
     },
     description: {
         type: String
     },
     status: {
-        type: String
+        type: String,
+        default: "Pending" 
     }
 }, {timestamps: true});
 
@@ -27,7 +31,7 @@ module.exports.getComplain = function(id, cb){
 
 module.exports.getComplains = function(username, cb){
     var query = { username: username };
-    Complain.find(query, cb);
+    Complain.find({}, cb);
 }
 
 module.exports.deleteComplain = function(id, cb){

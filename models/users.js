@@ -24,7 +24,7 @@ var UserSchema = mongoose.Schema({
     role: {
         type: String,
         required: true,
-        enum: ['user', 'admin'],
+        enum: ['user', 'tenant', 'employee', 'fundi'],
         default: 'user',
     },
     verified: {
@@ -54,6 +54,11 @@ module.exports.getUserById = function(id, callback) {
 module.exports.getUserByUsername = function(username, callback){
     var query = { username: username};
     User.findOne(query, callback);
+}
+
+module.exports.getTenants = function(cb){
+    var query = {role: "tenant"};
+    User.find(query, cb);
 }
 
 module.exports.getAllUsers = function(callback) {

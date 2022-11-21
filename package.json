@@ -16,8 +16,10 @@
     "joi": "^17.4.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.12",
+    "mpesa-api": "^3.0.2",
     "nanoid": "^4.0.0",
     "nodemailer": "^6.8.0",
+    "unirest": "^0.6.0",
     "uuidv4": "^6.2.13"
   },
   "devDependencies": {

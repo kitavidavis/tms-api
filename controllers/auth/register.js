@@ -9,15 +9,15 @@ async function register(request, response, next) {
     const newUser = new User({
       username: obj.username,
       password: obj.password,
-      phonenumber: obj.phonenumber
+      phonenumber: obj.phonenumber,
+      role: obj.role
     });
 
     User.getUserByUsername(obj.username, function(err, user){
       if(err) throw err;
 
       if(user){
-        return response.status(400).json({
-          error: username,
+        return response.status(400).send({
           message: 'An account already exists with that "username"',
         })
       }

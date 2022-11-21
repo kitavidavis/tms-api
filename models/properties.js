@@ -33,6 +33,10 @@ module.exports.getAllHouses = function(username, cb){
     House.find(query, cb);
 }
 
+module.exports.getHouses = function(cb){
+    House.find({}, cb);
+}
+
 module.exports.deleteHouse = function(id, cb){
     House.findByIdAndDelete(id, cb);
 }
